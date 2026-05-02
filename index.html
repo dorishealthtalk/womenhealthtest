@@ -195,6 +195,66 @@
   .cta-box p { font-size:13px; color:var(--text-muted); line-height:1.9; margin-bottom:6px; font-weight:300; }
   .cta-box strong { color:var(--text-dark); font-weight:600; font-family:'Noto Serif TC',serif; font-size:15px; }
 
+  /* CONSULT CTA BLOCK */
+  .consult-cta {
+    margin-top:20px;
+    background:linear-gradient(135deg,rgba(168,122,99,0.13) 0%,rgba(196,151,122,0.06) 100%);
+    border:1.5px solid rgba(196,151,122,0.45);
+    border-radius:18px;
+    padding:24px 22px 20px;
+    text-align:center;
+    animation:fadeIn 0.5s ease 0.3s both;
+  }
+  .consult-cta-emoji { font-size:26px; margin-bottom:10px; }
+  .consult-cta-title { font-family:'Noto Serif TC',serif; font-size:17px; font-weight:700; color:var(--text-dark); margin-bottom:8px; line-height:1.5; }
+  .consult-cta-resonance { font-size:13px; color:var(--text-mid); line-height:1.9; font-weight:300; margin-bottom:16px; }
+  .consult-cta-resonance strong { color:var(--rose-dim); font-weight:600; }
+
+  .prefill-box {
+    background:var(--bg-card);
+    border:1px dashed rgba(196,151,122,0.5);
+    border-radius:10px;
+    padding:12px 16px;
+    margin-bottom:14px;
+    text-align:left;
+  }
+  .prefill-label { font-size:10px; letter-spacing:2px; color:var(--text-muted); margin-bottom:6px; font-weight:400; }
+  .prefill-text { font-size:13px; color:var(--text-mid); line-height:1.75; font-weight:300; }
+  .prefill-text em { font-style:normal; color:var(--rose-dim); font-weight:500; }
+
+  .btn-line {
+    display:flex; align-items:center; justify-content:center; gap:9px;
+    width:100%; padding:14px 20px;
+    background:linear-gradient(135deg,#A87A63,#C4977A);
+    border:none; border-radius:50px;
+    font-family:'Noto Serif TC',serif; font-size:15px; font-weight:600;
+    color:#fff; cursor:pointer; letter-spacing:0.5px;
+    transition:all 0.3s;
+    box-shadow:0 4px 18px rgba(168,122,99,0.38);
+    text-decoration:none;
+  }
+  .btn-line:hover { transform:translateY(-2px); box-shadow:0 8px 26px rgba(168,122,99,0.48); }
+  .btn-line:active { transform:translateY(0); }
+  .btn-line-sub { font-size:11px; color:rgba(255,255,255,0.75); margin-top:7px; font-weight:300; letter-spacing:0.5px; }
+
+  /* BUTTON ROW */
+  .btn-row { display:flex; gap:10px; margin-top:16px; }
+  .btn-row .copy-btn { flex:1; margin:0; }
+
+  .result-block-guide {
+    margin-top:12px;
+    display:grid; gap:7px;
+    padding:12px 16px;
+    background:rgba(196,151,122,0.06);
+    border:1px solid rgba(196,151,122,0.2);
+    border-radius:10px;
+  }
+  .guide-row {
+    display:flex; align-items:flex-start; gap:8px;
+    font-size:13px; color:var(--text-mid); line-height:1.7; font-weight:300;
+  }
+  .guide-row b { color:var(--text-dark); font-weight:600; }
+
   .zero-state { text-align:center; padding:32px 20px; color:var(--text-muted); font-size:14px; font-weight:300; }
   .footer-tag { text-align:center; margin-top:52px; font-size:11px; color:var(--text-muted); letter-spacing:2.5px; font-weight:300; }
   .section-divider { height:1px; background:var(--border); margin:8px 22px; }
@@ -265,6 +325,7 @@
         <div class="sub-item"><div class="sub-checkbox"><span class="sub-checkmark">✓</span></div><div class="sub-item-text">乳癌（已確診或有家族史）</div></div>
       </div>
       <div class="section-divider"></div>
+      <div class="item" data-sid="s1" data-weight="2" data-label="經痛明顯"><div class="checkbox"><span class="checkmark">✓</span></div><div class="item-text">經痛明顯，需要止痛藥或影響日常</div></div>
       <div class="item" data-sid="s1" data-weight="2" data-label="月經量多、血塊多"><div class="checkbox"><span class="checkmark">✓</span></div><div class="item-text">月經量多、血塊多</div></div>
       <div class="item" data-sid="s1" data-weight="2" data-label="下腹悶痛"><div class="checkbox"><span class="checkmark">✓</span></div><div class="item-text">下腹悶痛，不一定在月經期</div></div>
       <div class="item" data-sid="s1" data-weight="1" data-label="經前胸脹"><div class="checkbox"><span class="checkmark">✓</span></div><div class="item-text">經前胸脹、乳房脹痛</div></div>
@@ -354,6 +415,9 @@
       <div class="result-block-header">
         <div class="result-block-label">PART 1 · 雌激素代謝現況</div>
         <div class="result-block-title">妳目前的失衡程度</div>
+        <div class="result-block-guide">
+          <div class="guide-row">💬 <span>看完結果，想知道怎麼調理？<b>複製完整結果私訊朵朵</b>，協助妳規劃適合的方案 🌸</span></div>
+        </div>
       </div>
       <div class="result-block-body">
         <div class="estrogen-gauge" id="estrogenGauge">
@@ -391,10 +455,18 @@
     <!-- Priority Cards -->
     <div class="priority-cards" id="priorityCards"></div>
     <div class="cta-box" id="ctaBox"></div>
-    <button class="copy-btn" id="copyBtn" onclick="copyResult()">
-      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-      一鍵複製我的結果
-    </button>
+
+    <!-- CONSULT CTA -->
+    <div class="consult-cta" id="consultCta" style="display:none">
+      <div class="consult-cta-title" id="consultTitle">妳的身體已經在說話了</div>
+      <div class="consult-cta-resonance" id="consultResonance"></div>
+      <a class="btn-line" id="btnLine" href="#" onclick="handleLineClick(event)">
+        📩 複製完整結果，私訊朵朵
+      </a>
+      <div class="btn-line-sub">朵朵會根據妳的完整結果，給個別調理建議</div>
+    </div>
+
+    <div class="btn-row"></div>
   </div>
 
   <div class="footer-tag">@dodo_health_talk</div>
@@ -617,16 +689,70 @@ document.getElementById('btnCheck').addEventListener('click', function() {
   document.getElementById('priorityCards').innerHTML = cardsHTML;
 
   var mainCause = top3.length > 0 ? top3[0] : null;
+
+  // ── 組合式結論 ──
+  var hasLiver  = scores.s2 > 0;
+  var hasGut    = scores.s3 > 0;
+  var hasStress = scores.s4 > 0;
+  var comboKey  = (hasLiver ? 'L' : '') + (hasGut ? 'G' : '') + (hasStress ? 'S' : '');
+
+  var COMBO_COPY = {
+    'L':   '先幫肝臟減負——讓雌激素的代謝出口暢通，舊的荷爾蒙才能真正排出去。',
+    'G':   '先修復腸道環境——壞菌太多會讓代謝後的雌激素重新回收，腸道好了發炎才能降下來。',
+    'S':   '先降低慢性發炎——長期高壓讓身體持續發炎，這會直接刺激異常組織增生、促進血管新生。',
+    'LG':  '護肝解毒、同步修復腸道——這是雌激素代謝的上下游，肝臟分解、腸道排出，兩條路同時打通，荷爾蒙才能真正清掉。',
+    'LS':  '護肝降發炎、同步推進——肝臟忙不過來時，慢性發炎會讓代謝更慢、異常組織更容易增生。兩個方向同步處理，效果才會出來。',
+    'GS':  '修復腸道、降低全身發炎——腸道壞菌和慢性發炎是互相餵養的關係，修好腸道黏膜，發炎才能真正被壓下來，異常組織的養分也會被切斷。',
+    'LGS': '三個方向同步介入——護肝讓代謝路徑暢通、修復腸道阻斷雌激素再回收、降低發炎抑制異常組織增生。這是最完整的調理路徑。'
+  };
+
+  var comboText = COMBO_COPY[comboKey] || '保持良好習慣，持續觀察身體變化。';
+
   document.getElementById('ctaBox').innerHTML =
     '<p>妳的雌激素狀況已有了解，接下來是行動的時候了</p>' +
-    '<strong>' + (mainCause ? '先從「' + mainCause.priority + '」開始調整，妳的身體最快感受到變化' : '保持良好習慣，持續觀察身體變化') + '</strong>' +
-    '<p style="margin-top:10px">追蹤 @dodo_health_talk 了解更多女性荷爾蒙健康知識</p>';
+    '<strong>' + comboText + '</strong>';
+
+  // ── CONSULT CTA ──
+  buildConsultCta(lvLabel, mainCause, sorted);
 
   res.scrollIntoView({ behavior:'smooth', block:'start' });
 });
 
+// ── CONSULT CTA ──
+var CONSULT_COPY = {
+  '重度失衡': {
+    title: '妳的細胞在呼救',
+    resonance: '真正的改善，不是靠藥物壓住症狀，而是幫細胞重新找回自我修復的能力。\n\n朵朵在做的，就是這件事。'
+  },
+  '中度失衡': {
+    title: '身體已經在說話了。',
+    resonance: '測出來是<strong>中度失衡</strong>，有確診的問題出現，代表累積已經有一段時間了。\n\n真正的改善，不是靠藥物壓住症狀，而是幫細胞重新找回自我修復的能力。\n\n朵朵在做的，就是這件事。'
+  },
+  '輕度失衡': {
+    title: '身體正在發出早期訊號。',
+    resonance: '測出來是<strong>輕度失衡</strong>，目前還沒確診，但問題已經在累積了。\n\n現在介入是最省力的時機——幫細胞在問題變大之前，找回自我調節的能力。\n\n朵朵在做的，就是這件事。'
+  }
+};
+
+function buildConsultCta(lvLabel, mainCause, sorted) {
+  var cta = document.getElementById('consultCta');
+  var copy = CONSULT_COPY[lvLabel] || CONSULT_COPY['輕度失衡'];
+
+  document.getElementById('consultTitle').textContent = copy.title;
+  document.getElementById('consultResonance').innerHTML =
+    copy.resonance.replace(/\n\n/g, '<br><br>');
+
+  cta.style.display = 'block';
+}
+
+function handleLineClick(e) {
+  e.preventDefault();
+  // 複製完整結果（與 copyResult 相同內容）然後跳轉 IG
+  copyResultAndOpenIG();
+}
+
 // ── COPY RESULT ──
-function copyResult() {
+function buildFullResultText() {
   // 收集 S1 勾選症狀
   var symList = [];
   if (gynoSubChecked > 0) {
@@ -636,7 +762,7 @@ function copyResult() {
   }
   document.querySelectorAll('#s1 .item.checked .item-text').forEach(function(t){ symList.push('• ' + t.textContent.trim()); });
 
-  // 收集成因勾選
+  // 收集成因勾選細項
   var causeLines = [];
   CAUSES.forEach(function(c) {
     var items = [];
@@ -696,34 +822,44 @@ function copyResult() {
     lines.push(badge + '｜' + c.priority);
   });
 
-  var text = lines.join('\n');
+  lines.push('');
+  lines.push('━━━━━━━━━━━━━━━━━━');
+  lines.push('朵朵你好，以上是我的完整自測結果，想了解適合我的調理方案 🙏');
+
+  return lines.join('\n');
+}
+
+function copyResultAndOpenIG() {
+  var text = buildFullResultText();
+  var btn = document.getElementById('btnLine');
+  var orig = btn.innerHTML;
+
+  function doOpen() {
+    btn.innerHTML = '✓ 已複製！開啟 IG 中…';
+    setTimeout(function() {
+      btn.innerHTML = orig;
+      window.open('https://ig.me/m/dodo_health_talk', '_blank');
+    }, 1000);
+  }
 
   if (navigator.clipboard && navigator.clipboard.writeText) {
-    navigator.clipboard.writeText(text).then(function() { showCopied(); }).catch(function() { fallbackCopy(text); });
+    navigator.clipboard.writeText(text).then(doOpen).catch(function() {
+      fallbackCopyFull(text, doOpen);
+    });
   } else {
-    fallbackCopy(text);
+    fallbackCopyFull(text, doOpen);
   }
 }
 
-function fallbackCopy(text) {
+function fallbackCopyFull(text, cb) {
   var ta = document.createElement('textarea');
-  ta.value = text;
-  ta.style.position = 'fixed'; ta.style.opacity = '0';
-  document.body.appendChild(ta);
-  ta.focus(); ta.select();
-  try { document.execCommand('copy'); showCopied(); } catch(e) {}
+  ta.value = text; ta.style.position='fixed'; ta.style.opacity='0';
+  document.body.appendChild(ta); ta.focus(); ta.select();
+  try { document.execCommand('copy'); } catch(e) {}
   document.body.removeChild(ta);
+  cb();
 }
 
-function showCopied() {
-  var btn = document.getElementById('copyBtn');
-  btn.classList.add('copied');
-  btn.innerHTML = '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> 已複製！';
-  setTimeout(function() {
-    btn.classList.remove('copied');
-    btn.innerHTML = '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> 一鍵複製我的結果';
-  }, 2500);
-}
 </script>
 </body>
 </html>
